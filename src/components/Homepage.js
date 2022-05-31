@@ -11,11 +11,10 @@ const Homepage = () => {
     await axios.post('http://localhost:5000/todo', {
       todoTask
     })
-    e.target.reset();
   };
 
   return (
-    <div className="todo w-full mx-auto">
+    <div className="todo w-full mx-auto mb-12">
       <div
         style={{ background: '#FF33AE' }}
         className="empty-box w-full h-56 bg-primary"
