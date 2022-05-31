@@ -1,4 +1,5 @@
 import Homepage from "./components/Homepage";
+import 'remixicon/fonts/remixicon.css'
 
 function App() {
   return (

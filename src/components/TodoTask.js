@@ -15,24 +15,9 @@ const TodoTask = () => {
           </tr>
         </thead>
         <tbody>
-          <tr class="border-b dark:bg-gray-800 border-[1px] border-black flex justify-between">
-            <td
-              class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
-            >
-              Apple MacBook Pro 17"
-            </td>
-            <td class="py-3 px-3 flex">
-              <button className="px-3 py-1 bg-gray-500 rounded-ls text-white">
-                Delete
-              </button>
-              <button className="px-3 py-1 bg-gray-500 rounded-ls text-white">
-                Delete
-              </button>
-              <button className="px-3 py-1 bg-gray-500 rounded-ls text-white">
-                Delete
-              </button>
-            </td>
-          </tr>
+          {
+            
+          }
         </tbody>
       </table>
     </div>
