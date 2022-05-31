@@ -1,6 +1,21 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import TodoTaskInfo from './TodoTaskInfo';
 
 const TodoTask = () => {
+  // get todo
+  const [todos, setTodos] = useState([]);
+  useEffect(()=> {
+    axios.get('http://localhost:5000/todo')
+    .then(res=> setTodos(res.data))
+  },[todos])
+
+
+  // handle delete todo
+  const handleDeleteTodo = async(id) => {
+    await axios.delete(`http://localhost:5000/todo/${id}`)
+  }
+  
   return (
     <div className="relative overflow-x-auto w-4/5 md:w-1/2 mx-auto bg-gray-300 p-5 rounded-lg mt-8">
       <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -14,7 +29,16 @@ const TodoTask = () => {
             </th>
           </tr>
         </thead>
-        <tbody>{}</tbody>
+        <tbody>
+          {
+            todos.map((todo, index) => <TodoTaskInfo 
+              key={index}
+              index={index}
+              todo={todo}
+              handleDeleteTodo={handleDeleteTodo}
+            />)
+          }
+        </tbody>
       </table>
     </div>
   );
