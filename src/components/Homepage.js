@@ -11,6 +11,7 @@ const Homepage = () => {
     await axios.post('http://localhost:5000/todo', {
       todoTask
     })
+    e.target.reset()
   };
 
   return (

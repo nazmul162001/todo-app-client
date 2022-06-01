@@ -1,5 +1,6 @@
 import Homepage from "./components/Homepage";
 import 'remixicon/fonts/remixicon.css'
+import swal from 'sweetalert';
 
 function App() {
   return (

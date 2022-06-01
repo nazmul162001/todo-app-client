@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import swal from 'sweetalert';
 import TodoTaskInfo from './TodoTaskInfo';
 
 const TodoTask = () => {
@@ -13,7 +14,23 @@ const TodoTask = () => {
 
   // handle delete todo
   const handleDeleteTodo = async(id) => {
-    await axios.delete(`http://localhost:5000/todo/${id}`)
+    swal({
+      title: "Are you sure?",
+      text: "You Want to Delete Your Todo?",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        swal("Your Todo has been deleted!", {
+          icon: "success",
+        });
+        axios.delete(`http://localhost:5000/todo/${id}`)
+      } else {
+        // swal("Your imaginary file is safe!");
+      }
+    });
   }
   
   return (
